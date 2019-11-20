@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 var token = process.env.TOKEN;//-> Token de respuesta para la suscripcion
 var received_updates = [];//-> Datos obtenidos del WebHook
 
+// const pages_acces_token = "EAAGtibYTXHQBAAqsmZCNO9CZC14Akxx1bZAIKAF1smFrF37IVvJqQAzFDquhS9a5jjLWFI5PlrCAZAPLeUFbT8GZC9D9wxqkwQwQBZCiASsZBv5pxaauq7DcsWJsUwhmcaE5tRZC5sQODIbZC6JZAwUXrd2W8pSUGZCOZATPZCce5OKie3pHLKcoLZAqxLmiHTEQB03ZCIZD"; 
+// const id_page = "100122931418648";
+
 //Imprimir el resultado
 app.get('/', function(req, res) {
     res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>');
@@ -43,4 +46,16 @@ app.post('/facebook', function(req, res) {
   res.sendStatus(200);
 });
 
+// app.get('/facebook/subscribe', {
+
+// }, function(req, res) {
+//   var myHeaders = new Headers();
+
+//   fetch('https://graph.facebook.com/v2.11/'+id_page+'/subscribed_apps').then(function(response) {
+//     console.log(response);
+//     debugger
+//   });
+// });
+
 app.listen();
+console.log("Servidor esta listo !!!");
